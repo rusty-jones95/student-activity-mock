@@ -20,27 +20,23 @@ export class StudentBarChartComponent {
   ngOnInit() {
     this.shareDataService.dataSource.subscribe((data) => {
       if (this.subscriptionCallCount > 1) {
-        console.log('hello from inside if statement');
         this.students = data;
         this.createLabelsAndDataSets();
         this.createStudentChart();
       }
       this.subscriptionCallCount = this.subscriptionCallCount + 1;
-      console.log('hello subscription call count: ' + this.subscriptionCallCount);
     });
   }
 
   createLabelsAndDataSets() {
     this.students.forEach(student => {
       if (!this.activityMap.has(student.activity)) {
-        console.log('Hello from init to 1');
         this.activityMap.set(student.activity, 1);
       } else {
         var count = this.activityMap.get(student.activity);
         if (count != undefined && count != null) {
           count = count + 1;
           this.activityMap.set(student.activity, count);
-          console.log('New activity map value: ' + this.activityMap.get(student.activity));
         }
       }
     });
