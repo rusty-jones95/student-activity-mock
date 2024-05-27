@@ -26,5 +26,8 @@ export class StudentTableComponent {
 
   generateCSVReport() {
     console.log('Hello from generate CSV report');
+    this.studentDataService.generateCSVReport(this.students).subscribe(data => {
+      console.log('Generate CSV response: ' + data);
+    });
   }
 }
