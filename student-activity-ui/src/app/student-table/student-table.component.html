@@ -1,0 +1,22 @@
+<h2>Student Activity</h2>
+<table class="table-format">
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email Address</th>
+        <th>Course</th>
+        <th>Activity</th>
+        <th>Activity Date</th>
+    </tr>
+    <tr *ngFor="let student of students">
+        <td>{{ student.firstName }}</td>
+        <td>{{ student.lastName }}</td>
+        <td>{{ student.emailAddress }}</td>
+        <td>{{ student.course }}</td>
+        <td>{{ student.activity }}</td>
+        <td>{{ student.activityDate }}</td>
+    </tr>
+</table>
+<div style="padding-top: 20px;">
+    <button style="width: 165px; height: 30px; cursor: pointer;">Generate CSV Report</button>
+</div>
