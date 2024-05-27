@@ -1,21 +1,22 @@
-var studentList = {"students": [
-    {
-        "firstName": "Student1",
-        "lastName": "Student1",
-        "emailAddress": "student1.student1@collin.edu",
-        "course": "COSC2450",
-        "activity": "Sent Message to Professor",
-        "activityDate": "05-24-2024"
-    }
-]};
+var studentList = {"students": []};
 
-for (var i = 2; i <= 500; i++) {
+for (var i = 1; i <= 500; i++) {
+    var studentActivity;
+    if (i <= 100) {
+        studentActivity = 'Answered Discussion Question';
+    } else if (i > 100 && i <= 220) {
+        studentActivity = 'Sent Message to Professor';
+    } else if (i > 120 && i <= 352) {
+        studentActivity = 'Submitted Test';
+    } else if (i > 352) {
+        studentActivity = 'Checked Grades';
+    }
     var student = {
         "firstName": "Student" + i,
         "lastName": "Student" + i,
         "emailAddress": "student" + i + ".student" + i + "@collin.edu",
         "course": "COSC245" + i,
-        "activity": "Sent Message to Professor",
+        "activity": studentActivity,
         "activityDate": "05-24-2024"
     };
     studentList.students.push(student);
